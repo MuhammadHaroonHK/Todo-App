@@ -1,0 +1,21 @@
+.custom{
+    width: 650px;
+    height: auto;
+    border: none;
+    border-radius: 5px;
+    box-shadow:0 0 8px rgba(0, 0, 0, 0.438)  ;  
+}
+.heading{
+    margin: 16px;
+}
+.input input{
+    width: 100%;
+    margin: 10px;
+}
+.button{
+    width: 75px;
+}
+.margin{
+    margin: 8px;
+    align-items: center;
+}
