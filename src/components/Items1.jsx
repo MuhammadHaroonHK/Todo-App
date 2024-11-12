@@ -1,4 +1,4 @@
-
+import { AiTwotoneDelete } from "react-icons/ai";
 
 const Items1 = ({ todoName, todoDate, handleDeleteBtn }) => {
 
@@ -9,7 +9,7 @@ const Items1 = ({ todoName, todoDate, handleDeleteBtn }) => {
       <div className="col col-lg-2">
         <button type="button"
           className="btn btn-danger button"
-          onClick={() => handleDeleteBtn(todoName)}>Delete</button>
+          onClick={() => handleDeleteBtn(todoName)}><AiTwotoneDelete /></button>
       </div>
     </div>
   )

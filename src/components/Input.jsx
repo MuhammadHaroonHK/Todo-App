@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useState } from "react";
+import { IoAdd } from "react-icons/io5";
 
 function Input({ addTodo }) {
 
@@ -35,7 +36,8 @@ function Input({ addTodo }) {
       <div className="col col-lg-2">
         <button type="button"
           className="btn btn-success button"
-          onClick={handleAddBtn}>Add</button>
+          onClick={handleAddBtn}>
+            <IoAdd className="addIcon"/></button>
       </div>
     </div>
   )
