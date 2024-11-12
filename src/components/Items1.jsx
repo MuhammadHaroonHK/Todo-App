@@ -9,7 +9,7 @@ const Items1 = ({ todoName, todoDate, handleDeleteBtn }) => {
       <div className="col col-lg-2">
         <button type="button"
           className="btn btn-danger button"
-          onClick={() => handleDeleteBtn(todoName)}><AiTwotoneDelete /></button>
+          onClick={() => handleDeleteBtn(todoName)}><AiTwotoneDelete className="addIcon"/></button>
       </div>
     </div>
   )
