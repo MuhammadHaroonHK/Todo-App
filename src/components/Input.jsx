@@ -6,7 +6,8 @@ function Input({ addTodo }) {
   const setNewName = useRef();
   const setNewDate = useRef();
 
-  const addClickHandle = () => {
+  const addClickHandle = (event) => {
+    event.preventDefault();
     const newName = setNewName.current.value;
     setNewName.current.value="";
     const newDate = setNewDate.current.value;
@@ -15,7 +16,7 @@ function Input({ addTodo }) {
   }
 
   return (
-    <div className="row margin">
+    <form  className="row margin" onSubmit={addClickHandle}>
       <div className="col-md-5 col-sm-3 input">
         <input type="text"
           placeholder="Enter Task"
@@ -26,12 +27,12 @@ function Input({ addTodo }) {
           ref={setNewDate} />
       </div>
       <div className="col col-lg-2">
-        <button type="button"
+        <button type="submit"
           className="btn btn-success button"
-          onClick={addClickHandle}>
+          >
           <IoAdd className="addIcon" /></button>
       </div>
-    </div>
+    </form>
   )
 }
 
