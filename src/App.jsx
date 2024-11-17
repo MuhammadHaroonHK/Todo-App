@@ -3,11 +3,13 @@ import Heading from "./components/Heading"
 import Input from "./components/Input"
 import TodoItem from "./components/TodoItem";
 import "bootstrap/dist/css/bootstrap.min.css"
-
+import { ItemsStore } from "./store/ItemsStore";
+import NoTask from "./components/NoTask";
 
 function App() {
 
   const [toDoItems, setToDoItems] = useState([]);
+
   const addNewItems = (itemName, itemDate) => {
     let newItems = [...toDoItems,
     { name: itemName, date: itemDate }
@@ -22,14 +24,21 @@ function App() {
 
   return (
     <>
-      <center>
+      <ItemsStore.Provider
+        value={{
+          addNewItems: addNewItems,
+          toDoItems: toDoItems,
+          handleDeleteBtn: handleDeleteBtn
+        }}>
+        <center>
           <div className="custom">
             <Heading />
-            <Input addTodo={addNewItems} />
-            <TodoItem doItem={toDoItems}
-              handleDeleteBtn={handleDeleteBtn} />
+            <Input />
+            <NoTask />
+            <TodoItem />
           </div>
-      </center>
+        </center>
+      </ItemsStore.Provider>
     </>
   )
 }

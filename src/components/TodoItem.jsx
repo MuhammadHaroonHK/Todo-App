@@ -1,11 +1,14 @@
 import Items1 from "./Items1";
+import { ItemsStore } from "../store/ItemsStore";
+import { useContext } from "react";
 
+const TodoItem = ({ handleDeleteBtn }) => {
 
-const TodoItem = ({ doItem, handleDeleteBtn }) => {
+    const { toDoItems } = useContext(ItemsStore);
 
     return (
         <div>
-            {doItem.map((item) =>
+            {toDoItems.map((item) =>
                 <Items1
                     key={item.name}
                     todoName={item.name}

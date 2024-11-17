@@ -1,6 +1,10 @@
 import { AiTwotoneDelete } from "react-icons/ai";
+import { ItemsStore } from "../store/ItemsStore";
+import { useContext } from "react";
 
-const Items1 = ({ todoName, todoDate, handleDeleteBtn }) => {
+const Items1 = ({ todoName, todoDate }) => {
+
+  const { handleDeleteBtn } = useContext(ItemsStore);
 
   return (
     <div className="row margin">
@@ -9,7 +13,7 @@ const Items1 = ({ todoName, todoDate, handleDeleteBtn }) => {
       <div className="col col-lg-2">
         <button type="button"
           className="btn btn-danger button"
-          onClick={() => handleDeleteBtn(todoName)}><AiTwotoneDelete className="addIcon"/></button>
+          onClick={() => handleDeleteBtn(todoName)}><AiTwotoneDelete className="addIcon" /></button>
       </div>
     </div>
   )
